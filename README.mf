@@ -1,0 +1,6 @@
+Step 1 - create some project
+Step 2 - init module in project
+
+    Use this command:
+        $ github.com/IhorBondartsov/testmod
+    This command create new file 'go.mod'
