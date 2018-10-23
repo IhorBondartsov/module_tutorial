@@ -1,6 +1,66 @@
+PART 1 Create module
+----------------------------------------------------
 Step 1 - create some project
 Step 2 - init module in project
 
     Use this command:
         $ github.com/IhorBondartsov/testmod
     This command create new file 'go.mod'
+
+Step 3 - push code to reps
+
+        $ git init
+        $ git add *
+        $ git commit -am "First commit"
+        $ git push -u origin master
+
+Step 4 - give version to our project
+
+        $ git tag v1.0.0
+        $ git push --tags
+
+
+
+PART 2 - 1  Using module
+----------------------------------------------------
+
+Step 1 - add module support
+
+        $ go mod init mod
+     this command creating go.mod
+
+Step 2 - build programme
+
+        $ go build
+      Added dependencies to 'go.mod'
+      You can see all packages which was added in 'go.mod'.
+      Also was created new file 'go.sum' which contains
+      package hashes to validate versions and files.
+
+
+PART 2 - 2 Update module
+----------------------------------------------------
+
+1. Update to last version:            |  go get -u
+2. Use last latest patch releases     |  go get -u=patch
+   If last version is 2.2.0,          |
+   you have version 2.1.0 after using |
+   command version will be 2.1.1      |
+3. Upgrade or downgrade to version    |  go get -u=patch
+4. Check incompatibilities after      |  go test all
+   update                             |
+5. HELP                               |  go help mod
+
+
+
+PART 3 Module with vendor
+----------------------------------------------------
+
+1 STEP - add vendor
+
+        $ go mod vendor
+    This commands create folder 'vendor' with all dependencies.
+
+2 STEP - build with vendor
+
+         $ go build -mod vendor
