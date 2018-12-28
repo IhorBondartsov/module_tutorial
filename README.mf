@@ -4,8 +4,14 @@ Step 1 - create some project
 Step 2 - init module in project
 
     Use this command:
-        $ github.com/IhorBondartsov/testmod
+        $ go mod init github.com/IhorBondartsov/testmod
     This command create new file 'go.mod'
+
+    !!! If you see error message  like this:
+            go: modules disabled inside GOPATH/src by GO111MODULE=auto; see 'go help modules'
+        You must change env variable GO111MODULE
+
+        $ export GO111MODULE=on
 
 Step 3 - push code to reps
 
